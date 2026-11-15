@@ -71,7 +71,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
             fontSize: 48,
             fontWeight: 700,
             color: textColor,
-            fontFamily: "Space Grotesk, Inter, system-ui, sans-serif",
+            fontFamily: "Noto Sans Arabic, Arial, sans-serif",
             letterSpacing: "0.05em",
             textTransform: "uppercase",
             textShadow: "0 2px 8px rgba(0,0,0,0.6)",
