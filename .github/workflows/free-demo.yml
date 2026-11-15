@@ -43,7 +43,7 @@ jobs:
       - name: Install FFmpeg
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg
+          sudo apt-get install -y ffmpeg fonts-noto-core
 
       - name: Generate free Arabic narration (world-in-numbers only)
         if: inputs.demo == 'world-in-numbers'
