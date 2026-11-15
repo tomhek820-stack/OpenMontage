@@ -110,7 +110,7 @@ export const PieChart: React.FC<PieChartProps> = ({
             fill={textColor}
             fontFamily={fontFamily}
             fontWeight={700}
-            fontSize={48}
+            fontSize={64}
             opacity={spring({ frame, fps, config: { damping: 20 } })}
           >
             {title}
@@ -223,7 +223,7 @@ export const PieChart: React.FC<PieChartProps> = ({
                   fill={textColor}
                   fontFamily={fontFamily}
                   fontWeight={800}
-                  fontSize={56}
+                  fontSize={72}
                 >
                   {centerValue}
                 </text>
@@ -237,7 +237,7 @@ export const PieChart: React.FC<PieChartProps> = ({
                   fill={textColor}
                   fontFamily={fontFamily}
                   fontWeight={400}
-                  fontSize={24}
+                  fontSize={30}
                   opacity={0.7}
                 >
                   {centerLabel}
@@ -273,7 +273,7 @@ export const PieChart: React.FC<PieChartProps> = ({
                     y={legendY + 6}
                     fill={textColor}
                     fontFamily={fontFamily}
-                    fontSize={22}
+                    fontSize={30}
                     fontWeight={500}
                   >
                     {slice.datum.label}
