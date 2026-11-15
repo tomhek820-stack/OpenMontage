@@ -7,8 +7,8 @@
       "type": "hero_title",
       "in_seconds": 0,
       "out_seconds": 3.5,
-      "text": "The World in Numbers",
-      "subtitle": "A zero-key showcase built from Remotion components only",
+      "text": "العالم بالأرقام",
+      "subtitle": "رحلة سريعة في حقائق كوكبنا",
       "backgroundColor": "#0F172A"
     },
     {
@@ -18,7 +18,7 @@
       "in_seconds": 3.5,
       "out_seconds": 7.5,
       "stat": "8.1B",
-      "subtitle": "People sharing one connected planet",
+      "subtitle": "إنسان على كوكب واحد",
       "accentColor": "#22D3EE",
       "backgroundColor": "#0F172A"
     },
@@ -28,14 +28,31 @@
       "type": "bar_chart",
       "in_seconds": 7.5,
       "out_seconds": 13,
-      "title": "Illustrative megacity population",
+      "title": "مدن كبرى حول العالم",
       "chartData": [
-        { "label": "Tokyo", "value": 37 },
-        { "label": "Delhi", "value": 33 },
-        { "label": "Shanghai", "value": 29 },
-        { "label": "Sao Paulo", "value": 22 }
+        {
+          "label": "طوكيو",
+          "value": 37
+        },
+        {
+          "label": "دلهي",
+          "value": 33
+        },
+        {
+          "label": "شنغهاي",
+          "value": 29
+        },
+        {
+          "label": "ساو باولو",
+          "value": 22
+        }
       ],
-      "chartColors": ["#22D3EE", "#A78BFA", "#F59E0B", "#34D399"],
+      "chartColors": [
+        "#22D3EE",
+        "#A78BFA",
+        "#F59E0B",
+        "#34D399"
+      ],
       "showGrid": true,
       "showValues": true,
       "backgroundColor": "#0F172A"
@@ -46,16 +63,33 @@
       "type": "pie_chart",
       "in_seconds": 13,
       "out_seconds": 18,
-      "title": "Illustrative energy mix",
+      "title": "مزيج الطاقة (بيانات توضيحية)",
       "chartData": [
-        { "label": "Renewables", "value": 34 },
-        { "label": "Gas", "value": 27 },
-        { "label": "Coal", "value": 21 },
-        { "label": "Nuclear", "value": 18 }
+        {
+          "label": "متجددة",
+          "value": 34
+        },
+        {
+          "label": "غاز",
+          "value": 27
+        },
+        {
+          "label": "فحم",
+          "value": 21
+        },
+        {
+          "label": "نووية",
+          "value": 18
+        }
       ],
-      "chartColors": ["#34D399", "#22D3EE", "#F97316", "#A78BFA"],
+      "chartColors": [
+        "#34D399",
+        "#22D3EE",
+        "#F97316",
+        "#A78BFA"
+      ],
       "donut": true,
-      "centerLabel": "Renewables",
+      "centerLabel": "متجددة",
       "centerValue": "34%",
       "showLegend": true,
       "backgroundColor": "#0F172A"
@@ -66,7 +100,7 @@
       "type": "text_card",
       "in_seconds": 18,
       "out_seconds": 22,
-      "text": "Big systems. Human-scale decisions.",
+      "text": "أرقام كبيرة... وقرارات تمس حياتنا",
       "color": "#F8FAFC",
       "backgroundColor": "#0F172A"
     }
@@ -76,8 +110,8 @@
       "type": "section_title",
       "in_seconds": 7.8,
       "out_seconds": 10.8,
-      "text": "Cities",
-      "subtitle": "Dense hubs make scale visible",
+      "text": "المدن",
+      "subtitle": "حيث تتركز الحياة والفرص",
       "accentColor": "#22D3EE"
     },
     {
@@ -85,11 +119,16 @@
       "in_seconds": 14.2,
       "out_seconds": 17.6,
       "text": "34%",
-      "subtitle": "Illustrative renewable share",
+      "subtitle": "حصة توضيحية للطاقة المتجددة",
       "accentColor": "#34D399",
       "position": "bottom-right"
     }
   ],
   "captions": [],
-  "audio": {}
+  "audio": {
+    "narration": {
+      "src": "audio/world-in-numbers.wav",
+      "volume": 1
+    }
+  }
 }
