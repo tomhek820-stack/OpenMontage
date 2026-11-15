@@ -71,7 +71,7 @@ export const HeroTitle: React.FC<HeroTitleProps> = ({
             style={{
               marginTop: 20,
               opacity: spring({
-                frame: frame - titleChars.length * 1.2 - 5,
+                frame: frame - 12,
                 fps,
                 config: { damping: 20 },
               }),
