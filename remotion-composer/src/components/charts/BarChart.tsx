@@ -92,7 +92,7 @@ export const BarChart: React.FC<BarChartProps> = ({
             fill={textColor}
             fontFamily={fontFamily}
             fontWeight={700}
-            fontSize={48}
+            fontSize={64}
             opacity={spring({ frame, fps, config: { damping: 20 } })}
           >
             {title}
@@ -126,7 +126,7 @@ export const BarChart: React.FC<BarChartProps> = ({
                   fill={textColor}
                   fontFamily={fontFamily}
                   fontWeight={400}
-                  fontSize={20}
+                  fontSize={28}
                   opacity={gridOpacity}
                 >
                   {formatNumber(line.value)}
@@ -243,7 +243,7 @@ export const BarChart: React.FC<BarChartProps> = ({
                   fill={textColor}
                   fontFamily={fontFamily}
                   fontWeight={600}
-                  fontSize={22}
+                  fontSize={30}
                   opacity={interpolate(
                     barProgress,
                     [0.7, 1],
