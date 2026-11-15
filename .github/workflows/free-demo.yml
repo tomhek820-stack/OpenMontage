@@ -45,6 +45,22 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
+      - name: Generate free Arabic narration (world-in-numbers only)
+        if: inputs.demo == 'world-in-numbers'
+        run: |
+          python -m pip install --upgrade piper-tts
+          mkdir -p remotion-composer/public/audio .cache/piper
+          curl -L --fail --retry 3 \
+            https://huggingface.co/rhasspy/piper-voices/resolve/main/ar/ar_JO/kareem/medium/ar_JO-kareem-medium.onnx \
+            -o .cache/piper/ar_JO-kareem-medium.onnx
+          curl -L --fail --retry 3 \
+            https://huggingface.co/rhasspy/piper-voices/resolve/main/ar/ar_JO/kareem/medium/ar_JO-kareem-medium.onnx.json \
+            -o .cache/piper/ar_JO-kareem-medium.onnx.json
+          python scripts/generate_demo_narration.py \
+            --model .cache/piper/ar_JO-kareem-medium.onnx \
+            --config .cache/piper/ar_JO-kareem-medium.onnx.json \
+            --output remotion-composer/public/audio/world-in-numbers.wav
+
       - name: Install Remotion dependencies
         working-directory: remotion-composer
         run: npm install --no-audit --no-fund
