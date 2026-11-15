@@ -67,7 +67,7 @@ export const StatReveal: React.FC<StatRevealProps> = ({
       >
         <div
           style={{
-            fontSize: 96,
+            fontSize: 144,
             fontWeight: 800,
             color: accentColor,
             fontFamily: "Space Grotesk, Inter, system-ui, sans-serif",
@@ -80,7 +80,7 @@ export const StatReveal: React.FC<StatRevealProps> = ({
         {label && (
           <div
             style={{
-              fontSize: 22,
+              fontSize: 34,
               fontWeight: 500,
               color: textColor,
               fontFamily: "Space Grotesk, Inter, system-ui, sans-serif",
