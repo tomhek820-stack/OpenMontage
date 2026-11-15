@@ -37,8 +37,7 @@ export const HeroTitle: React.FC<HeroTitleProps> = ({
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Staggered letter-by-letter spring
-  const titleChars = title.split("");
+  const titleEntrance = spring({ frame, fps, config: { damping: 16, stiffness: 100 } });
 
   return (
     <AbsoluteFill
@@ -48,44 +47,22 @@ export const HeroTitle: React.FC<HeroTitleProps> = ({
         background: scrimBackground,
       }}
     >
-      <div style={{ textAlign: "center", maxWidth: "85%" }}>
-        {/* Main title with per-character spring */}
+      <div style={{ textAlign: "center", maxWidth: "88%", direction: "rtl" }}>
+        {/* Keep Arabic text in one node so glyph shaping and joining stay correct. */}
         <div
           style={{
+            opacity: titleEntrance,
+            transform: `translateY(${interpolate(titleEntrance, [0, 1], [36, 0])}px)`,
             fontSize: 108,
             fontWeight: 800,
-            fontFamily: "Space Grotesk, Inter, system-ui, sans-serif",
-            lineHeight: 1.2,
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: 0,
+            fontFamily: "Noto Sans Arabic, Arial, sans-serif",
+            lineHeight: 1.35,
+            color: textColor,
+            textAlign: "center",
+            unicodeBidi: "plaintext",
           }}
         >
-          {titleChars.map((char, i) => {
-            const delay = i * 1.2;
-            const charSpring = spring({
-              frame: frame - delay,
-              fps,
-              config: { damping: 12, stiffness: 150 },
-            });
-
-            return (
-              <span
-                key={i}
-                style={{
-                  display: "inline-block",
-                  opacity: charSpring,
-                  transform: `translateY(${interpolate(charSpring, [0, 1], [30, 0])}px)`,
-                  color: i < 8 ? accentColor : textColor, // Accent first word
-                  whiteSpace: char === " " ? "pre" : undefined,
-                  minWidth: char === " " ? "0.3em" : undefined,
-                }}
-              >
-                {char}
-              </span>
-            );
-          })}
+          {title}
         </div>
 
         {/* Subtitle */}
@@ -101,9 +78,9 @@ export const HeroTitle: React.FC<HeroTitleProps> = ({
               fontSize: 40,
               fontWeight: 400,
               color: subtitleColor,
-              fontFamily: "Space Grotesk, Inter, system-ui, sans-serif",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
+              fontFamily: "Noto Sans Arabic, Arial, sans-serif",
+              letterSpacing: "normal",
+              direction: "rtl",
             }}
           >
             {subtitle}
