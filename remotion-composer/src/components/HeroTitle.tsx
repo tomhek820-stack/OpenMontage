@@ -52,7 +52,7 @@ export const HeroTitle: React.FC<HeroTitleProps> = ({
         {/* Main title with per-character spring */}
         <div
           style={{
-            fontSize: 72,
+            fontSize: 108,
             fontWeight: 800,
             fontFamily: "Space Grotesk, Inter, system-ui, sans-serif",
             lineHeight: 1.2,
@@ -98,7 +98,7 @@ export const HeroTitle: React.FC<HeroTitleProps> = ({
                 fps,
                 config: { damping: 20 },
               }),
-              fontSize: 28,
+              fontSize: 40,
               fontWeight: 400,
               color: subtitleColor,
               fontFamily: "Space Grotesk, Inter, system-ui, sans-serif",
@@ -124,7 +124,7 @@ export const HeroTitle: React.FC<HeroTitleProps> = ({
                 config: { damping: 15, stiffness: 60 },
               }),
               [0, 1],
-              [0, 400]
+              [0, 520]
             ),
           }}
         />
