@@ -39,7 +39,7 @@ export const TextCard: React.FC<TextCardProps> = ({
           transform: `scale(${scale})`,
           fontSize,
           color,
-          fontFamily: "Inter, system-ui, sans-serif",
+          fontFamily: "Noto Sans Arabic, Arial, sans-serif",
           whiteSpace: "pre-line",
           fontWeight: 700,
           textAlign: "center",
