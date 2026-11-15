@@ -1,0 +1,65 @@
+name: Free Remotion Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      demo:
+        description: Demo video to render
+        required: true
+        type: choice
+        default: world-in-numbers
+        options:
+          - world-in-numbers
+          - code-to-screen
+          - focusflow-pitch
+
+permissions:
+  contents: read
+
+concurrency:
+  group: free-demo-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    name: Render free demo
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24.22.3"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Remotion dependencies
+        working-directory: remotion-composer
+        run: npm install --no-audit --no-fund
+
+      - name: Prepare Remotion browser
+        working-directory: remotion-composer
+        run: npx remotion browser ensure
+
+      - name: Render selected demo
+        run: python render_demo.py "${{ inputs.demo }}"
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: openmontage-${{ inputs.demo }}
+          path: projects/demos/renders/${{ inputs.demo }}.mp4
+          if-no-files-found: error
+          retention-days: 1
