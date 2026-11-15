@@ -70,7 +70,7 @@ export const StatReveal: React.FC<StatRevealProps> = ({
             fontSize: 144,
             fontWeight: 800,
             color: accentColor,
-            fontFamily: "Space Grotesk, Inter, system-ui, sans-serif",
+            fontFamily: "Noto Sans Arabic, Arial, sans-serif",
             lineHeight: 1,
             textShadow: `0 0 ${interpolate(glow, [0, 1], [0, 30])}px ${accentColor}66, 0 4px 12px rgba(0,0,0,0.5)`,
           }}
