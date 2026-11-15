@@ -9,7 +9,7 @@ interface TextCardProps {
 
 export const TextCard: React.FC<TextCardProps> = ({
   text,
-  fontSize = 64,
+  fontSize = 88,
   color = "#FFFFFF",
   backgroundColor = "#1F2937",
 }) => {
