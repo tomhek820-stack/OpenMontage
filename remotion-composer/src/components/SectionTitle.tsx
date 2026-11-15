@@ -59,16 +59,16 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
         {/* Accent bar */}
         <div
           style={{
-            width: interpolate(slideIn, [0, 1], [0, 60]),
-            height: 4,
+            width: interpolate(slideIn, [0, 1], [0, 84]),
+            height: 6,
             backgroundColor: accentColor,
-            marginBottom: 12,
+            marginBottom: 20,
             borderRadius: 2,
           }}
         />
         <div
           style={{
-            fontSize: 28,
+            fontSize: 48,
             fontWeight: 700,
             color: textColor,
             fontFamily: "Space Grotesk, Inter, system-ui, sans-serif",
@@ -82,7 +82,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
         {subtitle && (
           <div
             style={{
-              fontSize: 18,
+              fontSize: 30,
               fontWeight: 400,
               color: accentColor,
               fontFamily: "Space Grotesk, Inter, system-ui, sans-serif",
